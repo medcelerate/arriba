@@ -89,7 +89,8 @@ fusions$breakpoint1 <- as.numeric(sub(".*:", "", fusions$breakpoint1, perl=T))
 fusions$contig2 <- sub(":.*", "", fusions$breakpoint2)
 fusions$breakpoint2 <- as.numeric(sub(".*:", "", fusions$breakpoint2, perl=T))
 
-pdf(outputFile, onefile=T, width=pdfWidth, height=pdfHeight, title=fusionsFile)
+#pdf(outputFile, onefile=T, width=pdfWidth, height=pdfHeight, title=fusionsFile)
+svg(outputFile, oneFile=F, width=pdfWidth, height=pdfHeight)
 if (nrow(fusions) == 0) {
 	plot(0, 0, type="l", xaxt="n", yaxt="n", xlab="", ylab="")
 	text(0, 0, "Error: empty input file\n")
